@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Lista de Profesionales</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+
+            table td, table th {
+                border: 2px solid black;
+                padding: 8px;
+            }
+
+            body {
+                padding: 20px;
+                background-image: url("ss.jpg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            h1 {
+                margin-top: 50px;
+                text-align: center;
+                text-decoration: underline;
+                padding-left: 10px;
+                color : darkgreen;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <h1>Profesionales de la especialidad: <span th:text="${especialidad}"></span></h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Honorarios</th>
+                    <th>Especialidad</th>
+                    <th>Email</th>
+                    <th>Calificacion</th>
+                    <th>Ver Horarios</th>
+                </tr>
+            </thead>
+
+            <tr th:each="profesional : ${profesionales}">
+                <td
+                    th:text="${profesional.nombre}">
+                </td>
+                <td th:text="${profesional.honorario}"></td>
+                <td th:text="${profesional.especialidad}"></td>
+                <td th:text="${profesional.email}"></td>
+                <td th:text="${profesional.calificacion}"></td>
+
+                <td>
+                    <a th:href="@{/usuario/horarioProfesional/{id}(id=${profesional.id})}">Horarios</a>
+                </td>
+            
+            </tr>
+            </tbody>
+
+        </table>
+
+        <div class="divVolver">
+            <a th:href="@{/inicio}" class="btn btn-secondary my-2 botonVolver botones">Volver</a>
+        </div>
+    </body>
+</html>

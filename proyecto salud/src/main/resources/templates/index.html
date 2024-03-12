@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Servicios Salud</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                padding: 20px;
+                background-image: url("estetoscopio.jpg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+             h1 {
+            margin-top: 50px;
+            text-align: center;
+            text-decoration: underline;
+            padding-left: 10px;
+            color : darkgreen;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>BIENVENIDO A SERVICIOS SALUD</h1><BR>
+        <a class="nav-link" th:href="@{/registrar}"><strong>Registrarse</strong></a><BR>
+        <BR>
+        <a class="nav-link" th:href="@{/login}"><strong>Ingresar</strong></a>
+    </body>
+</html>

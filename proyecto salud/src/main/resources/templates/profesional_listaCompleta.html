@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+         table {
+                border-collapse: collapse;
+            }
+
+            table td, table th {
+                border: 2px solid black;
+                padding: 8px;
+            }
+            *{
+                background-color: lightgrey
+            }
+        
+     </style>   
+<title>Lista de Profesionales</title>
+</head>
+<body>
+    <h1>Lista de Profesionales</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Especialidad</th>
+                 <th>Honorario</th>
+                  <th>Email</th>
+                <th>Acciones</th> 
+                <th>Cargar Horarios</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se generan las filas de la tabla utilizando Thymeleaf -->
+            <tr th:each="profesional : ${profesionales}">
+                <td th:text="${profesional.nombre}"></td>
+                <td th:text="${profesional.especialidad}"></td>
+                  <td th:text="${profesional.honorario}"></td>
+                    <td th:text="${profesional.email}"></td>
+                <td>
+                    <!-- Enlace para modificar el profesional -->
+                    <a th:href="@{/profesional/modificar/{id}(id=${profesional.id})}" class="btn btn-primary">Modificar</a>
+                     </td>
+                    <td>
+                    <a th:href="@{/horarios/crearHorario/{id}(id=${profesional.id})}" class="btn btn-primary">Cargar Horarios</a>
+                <td>
+            </tr>
+        </tbody>
+    </table><br>
+    <div class="divVolver">
+        <a href="/inicio" class="btn btn-secondary my-2 botonVolver botones">Volver</a>
+    </div>
+</body>
+</html>

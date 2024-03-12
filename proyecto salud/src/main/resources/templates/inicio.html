@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <style>
+            body {
+                padding: 20px;
+                background-image: url("estetoscopio.jpg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            h1 {
+                margin-top: 50px;
+                text-align: center;
+                text-decoration: underline;
+                padding-left: 10px;
+                color : darkgreen;
+            }
+        </style>
+
+
+
+        <title>Página de busqueda de profesionales</title>
+
+    </head>
+    <body>
+        <h1>Bienvenido : <span th:text="${#authentication.principal.username}"></span></h1>
+
+        <form action="/usuario/listaProfesional" method="get">
+            <label for="especialidad">Selecciona una especialidad:</label>
+            <select id="especialidad" name="especialidad">
+                <option value="">-- Seleccionar --</option>
+                <option value="PEDIATRIA">PEDIATRIA</option>
+                <option value="GINECOLOGIA">GINECOLOGIA</option>
+                <option value="CLINICA">CLINICA</option>
+                <option value="CARDIOLOGIA">CARDIOLOGIA</option>
+            </select>
+            <input type="submit" value="Buscar profesionales">
+        </form>
+        <br>
+        <br>
+        <section class=" text-center container">
+          
+        <div class="divVolver">
+            <a th:href="@{/inicio}" class="btn btn-secondary my-2 botonVolver botones">Volver</a>
+        </div>
+        </section>
+    </body>
+</html>

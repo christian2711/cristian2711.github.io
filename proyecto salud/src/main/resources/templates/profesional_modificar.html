@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Página de librería</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <!-- Estilos personalizados -->
+        <style>
+            body {
+                padding: 20px;
+                background-image: url("/ss.jpg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            h1 {
+                margin-top: 20px;
+                text-align: center;
+            }
+
+            .navbar-brand {
+                font-weight: bold;
+                color: #333;
+            }
+
+            .navbar-nav .nav-link {
+                color: #333;
+            }
+
+            .navbar-nav .nav-link strong {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h1>Modificar profesional</h1>
+                        <form class="formulario" th:action="@{/profesional/modificar/{id}(id=${profesional.id})}" method="POST">
+                            <input type="hidden" th:value="${profesional.id}" name="id">
+                            <label for="Nombre" class="form-label">Nombre del profesional</label>
+                            <input type="text" th:value="${profesional.nombre}" class="form-control" id="Nombre" name="nombre">
+                            <label for="honorario" class="form-label">Arancel del profesional</label>
+                            <input type="number" class="form-control" name="honorario" th:value="${profesional.honorario}" placeholder="Arancel del profesional">
+                            <label for="email" class="form-label">Email del profesional</label>
+                            <input type="text" th:value="${profesional.email}" class="form-control" id="email" name="email">
+                            <div class="form-group">
+                                <label for="especialidad">Especialidad:</label>
+                                <select name="especialidad" class="form-control">
+                                    <option value="PEDIATRIA">Pediatría</option>
+                                    <option value="CLINICA">Clínica</option>
+                                    <option value="CARDIOLOGIA">Cardiología</option>
+                                    <option value="GINECOLOGIA">Ginecología</option>
+                                </select>
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-primary">Actualizar</button>
+                        </form>
+                    </div>
+                    <a class="nav-link" th:href="@{/inicio}"><strong>Volver a Inicio</strong></a>
+                </div>
+            </div>
+        </nav>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+         <style>
+            body {
+                padding: 20px;
+                background-image: url("/ss.jpg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .btn{
+                background-color: aqua;
+            }
+        
+            h1 {
+                margin-top: 50px;
+                text-align: center;
+                text-decoration: underline;
+                padding-left: 10px;
+                color : darkgreen;
+            }
+        </style>
+
+
+
+        <title>Página de inicio profesional</title>
+
+    </head>
+    <body>
+        <h1>Bienvenido : <span th:text="${#authentication.principal.username}"></span></h1>
+
+        <ul>
+            <li class="nav-item">
+                <a Style="color:blue" class="nav-link" th:href="@{/profesional/listarPacientes}"><strong>LISTAR PACIENTES</strong></a>
+            </li>
+            <br>  <br>
+           
+            
+            <li class="nav-item">
+                <a Style="color:black" class="nav-link editoriales-lista" th:href="@{/logout}"><strong>CERRAR SESION</strong></a>
+            </li>
+            
+            
+        </ul>
+
+    </body>
+</html>

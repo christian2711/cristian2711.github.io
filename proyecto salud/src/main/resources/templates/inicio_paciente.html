@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <style>
+            body {
+                padding: 20px;
+                background-image: url("estetoscopio.jpg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            h1 {
+                margin-top: 50px;
+                text-align: center;
+                text-decoration: underline;
+                padding-left: 10px;
+                color : darkgreen;
+            }
+        </style>
+
+
+
+        <title>Página de inicio</title>
+
+    </head>
+    <body>
+        <h1>Bienvenido : <span th:text="${#authentication.principal.username}"></span></h1>
+
+
+        <br>
+        <br>
+        <section class=" text-center container">
+            <br>
+            <ul>
+                <li>
+
+                    <!-- Enlace para modificar el paciente -->
+                    <a th:href="@{/perfil}" class="btn btn-primary">Aca puede Modificar sus Datos</a>
+                   
+                </li>
+                <br>
+                <br>
+                <li>
+                    <a th:href="@{/usuario/inicio}" class="btn btn-primary">Aca puede Acceder al listado de Profesionales</a>
+
+
+
+                </li>
+            </ul><br>
+            <li class="nav-item">
+                <a Style="color:black" class="nav-link editoriales-lista" th:href="@{/logout}"><strong>CERRAR SESION</strong></a>
+            </li>
+            <br>
+
+        </section>
+    </body>
+</html>

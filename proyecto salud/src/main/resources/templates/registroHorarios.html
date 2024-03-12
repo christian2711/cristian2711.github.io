@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <meta charset="utf-8" >
+        <title>Servicios Salud - Login</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/formulario.css">
+
+        <style>
+            body {
+                padding: 5px;
+                background-image: url(".jpg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        </style>
+    <head>
+        <title>Servicio Salud</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form th:action="@{/horarios/crearTurnoPorDia/__${id}__}" method="POST">
+            <input hidden th:value="${id}" name="id">
+            <br>
+            <h2>Cargar Horarios Disponibles</h2>
+            <br>
+            <div class="form-group">
+
+                <label for="dia">Día:</label><br>
+                <select name="dia" id="dia">
+                    <option value="LUNES">Lunes</option>
+                    <option value="MARTES">Martes</option>
+                    <option value="MIERCOLES">Miércoles</option>
+                    <option value="JUEVES">Jueves</option>
+                    <option value="VIERNES">Viernes</option>
+                </select>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="horarios">Horarios:</label>
+                <div>
+                    <input type="checkbox" name="turnos" value="8:00" id="turno_1">
+                    <label for="turno_1">8:00</label>
+                    <input type="checkbox" name="turnos" value="9:00" id="turno_2">
+                    <label for="turno_2">9:00</label>
+                    <input type="checkbox" name="turnos" value="10:00" id="turno_3">
+                    <label for="turno_3">10:00</label>
+                    <input type="checkbox" name="turnos" value="11:00" id="turno_4">
+                    <label for="turno_4">11:00</label>
+                    <input type="checkbox" name="turnos" value="12:00" id="turno_5">
+                    <label for="turno_5">12:00</label>
+                    <input type="checkbox" name="turnos" value="16:00" id="turno_6">
+                    <label for="turno_6">16:00</label>
+                    <input type="checkbox" name="turnos" value="17:00" id="turno_7">
+                    <label for="turno_7">17:00</label>
+                    <input type="checkbox" name="turnos" value="18:00" id="turno_8">
+                    <label for="turno_8">18:00</label>
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Agregar Horario</button>
+        </form>
+        <br>
+        <div class="divVolver">
+            <a href="/inicio" class="btn btn-secondary my-2 botonVolver botones">Volver</a>
+        </div>
+    </body>
+</html>

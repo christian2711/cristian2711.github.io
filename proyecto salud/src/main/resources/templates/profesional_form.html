@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Página de librería</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <style>
+            body {
+                padding: 20px;
+                background-image: url("/ss.jpg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            h1 {
+                margin-top: 20px;
+                text-align: center;
+            }
+
+
+            .navbar-brand {
+                font-weight: bold;
+                color: #333;
+            }
+
+            .navbar-nav .nav-link {
+                color: #333;
+            }
+
+            .navbar-nav .nav-link strong {
+                font-weight: bold;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h2>Cargar Profesional</h2>
+        <br>
+    <form action="/profesional/registroProfesional" method="POST">
+    <div class="form-group">
+        <input type="text" class="form-control" name="nombre" placeholder="Nombre del Profesional">
+    </div>
+    <br>
+    <div class="form-group">
+        <input type="number" class="form-control" name="honorario" placeholder="Arancel del profesional">
+    </div>
+    <br>
+    <div class="form-group">
+        <input type="text" class="form-control" name="email" placeholder="Email">
+    </div>
+    <br>
+    <div class="form-group">
+        <input type="number" class="form-control" name="calificacion" placeholder="Calificacion del profesional">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="especialidad">Especialidad:</label>
+        <select name="especialidad" class="form-control">
+            <option value="PEDIATRIA">Pediatría</option>
+            <option value="CLINICA">Clínica</option>
+            <option value="CARDIOLOGIA">Cardiología</option>
+            <option value="GINECOLOGIA">Ginecología</option>
+        </select>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="rol">Rol:</label>
+        <select name="rol" class="form-control">
+            <option value="ADMIN">Admin</option>
+            <option value="PROFESIONAL">Profesional</option>
+        </select>
+    </div>
+    <br>
+    <div class="form-group my-3">
+        <input type="password" class="form-control" name="password" placeholder="CONTRASEÑA">
+    </div>
+    <br>
+    <div class="form-group my-3">
+        <input type="password" class="form-control" name="password2" placeholder="REPETIR CONTRASEÑA">
+    </div>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+        <br>
+        <br>
+        <a class="nav-link" href="/inicio"><strong>Volver a Inicio</strong></a>
